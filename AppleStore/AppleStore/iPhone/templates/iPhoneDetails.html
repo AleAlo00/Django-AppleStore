@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block title %}
+iPhone Dettagli
+{% endblock %}
+
+{% block content %}
+<h1>{{ myiPhone.name }} Dettagli</h1>
+<p><h4>Prezzo ></h4>{{ myiPhone.price }} euro</p>
+<p><h4>Colore ></h4>{{ myiPhone.color }}</p>
+<p><h4>Spazio ></h4>{{myiPhone.space}}</p>
+<p><h4>Display ></h4>{{myiPhone.display}}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Aggiorna iPhone</button>
+</form>
+
+<p>Aggiungi al <a href="/iPhone/shop">carrello</a></p>
+
+<p>Torna al <a href="/iPhone">negozio iPhone</a></p>
+{% endblock %}

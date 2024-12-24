@@ -1,0 +1,18 @@
+{% extends "master.html" %}
+
+{% block title %}
+iPhone Shop
+{% endblock %}
+
+{% block content %}
+
+<p><a href="/">Home</a></p>
+
+<h1>iPhone</h1>
+
+<ul>
+    {% for x in myiPhone %}
+    <li><a href="iPhoneDetails/{{x.id}}">{{x.name}}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
